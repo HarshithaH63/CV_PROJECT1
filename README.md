@@ -20,12 +20,16 @@ MonoDepth-Assist is a monocular object detection and depth estimation pipeline d
 Recommended: Python 3.9+ with PyTorch and CUDA (optional)
 
 ```bash
-# Install PyTorch (pick correct CUDA version)
+# Install PyTorch (pick the correct CUDA version)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
 # Install other dependencies
 pip install ultralytics opencv-python matplotlib pandas transformers timm
-Dataset
+
+bash ```
+
+----
+## Dataset
 This project uses the Cityscapes dataset:
 
 RGB images: leftImg8bit_trainvaltest/
