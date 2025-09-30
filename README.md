@@ -26,29 +26,29 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 # Install other dependencies
 pip install ultralytics opencv-python matplotlib pandas transformers timm
 
-bash ```
+```
 
-----
 ## Dataset
-This project uses the Cityscapes dataset:
-
+This project uses the [Cityscapes Dataset](https://www.cityscapes-dataset.com/)
 RGB images: leftImg8bit_trainvaltest/
-
 Optional ground truth depth: gtFine_trainvaltest/ or custom depth maps
+Note: The dataset is large (~10s of GBs), so these folders are ignored in Git via .gitignore..
 
-Note: The dataset is large (~10s of GBs), so these folders are ignored in Git via .gitignore.
-
-Usage
-Set the image path in cityscapes_yolo_midas_fusion.py:
+## Usage
+1. Set the image path in cityscapes_yolo_midas_fusion.py:
+```
 IMG_PATH = "./leftImg8bit_trainvaltest/val/frankfurt/frankfurt_000000_003025_leftImg8bit.png"
 GT_DEPTH_PATH = "./gt_depth/frankfurt_000000_003025_depth.png"  # optional
-Run the pipeline: python cityscapes_yolo_midas_fusion.py
-Outputs:
+```
+2. Run the pipeline:
+python cityscapes_yolo_midas_fusion.py
+
+## Outputs:
 Annotated image: outputs/annotated.png
 CSV with detections & depth: outputs/detections_with_distance.csv
 Optional plots and summary statistics in the terminal or displayed via matplotlib
 
-Example Output
+## Example Output
 Class	Confidence	Rel. Depth	Est. Distance (m)	Direction
 car   	0.95	     0.32	       35.1	             Center
 person	0.87	     0.45	       29.4	             Left
@@ -60,7 +60,9 @@ YOLO weights: yolov8n.pt, yolov8m.pt, or yolov8l.pt
 Depth model: "depth-anything/Depth-Anything-V2-small-hf" (default, can change to larger model for higher quality)
 Output directory: OUT_DIR in the script
 
-License & References
-YOLOv8: https://github.com/ultralytics/ultralytics
-Depth-Anything: https://huggingface.co/depth-anything/Depth-Anything-V2-small-hf
-Cityscapes dataset: https://www.cityscapes-dataset.com/
+## License & References
+
+- YOLOv8: [Ultralytics](https://github.com/ultralytics/ultralytics)  
+- Depth-Anything: [Hugging Face Transformers](https://huggingface.co/depth-anything/Depth-Anything-V2-small-hf)  
+- Cityscapes dataset: [Cityscapes Dataset](https://www.cityscapes-dataset.com/)
+
