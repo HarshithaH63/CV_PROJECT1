@@ -1,0 +1,13 @@
+class,confidence,distance_rel,direction,x1,y1,x2,y2
+traffic light,0.4101,0.0281,Left,604,52,630,120
+traffic light,0.2946,0.0284,Left,579,51,631,121
+truck,0.8574,0.3581,Center,713,316,877,440
+car,0.6656,0.4413,Left,640,390,704,457
+car,0.9034,0.4503,Center,915,334,1336,688
+car,0.8941,0.4875,Left,152,383,431,541
+car,0.8403,0.4877,Left,460,378,636,500
+bicycle,0.8111,nan,Right,1588,384,1786,513
+car,0.6983,nan,Right,1429,362,1632,453
+traffic light,0.4732,nan,Center,1161,0,1192,43
+car,0.3351,nan,Center,1276,374,1337,439
+traffic light,0.2597,nan,Center,1164,0,1212,43
