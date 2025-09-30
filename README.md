@@ -15,23 +15,6 @@ MonoDepth-Assist is a monocular object detection and depth estimation pipeline d
 
 ---
 
-## Project Structure
-
-.
-├── cityscapes_yolo_midas_fusion.py # Main pipeline script
-├── Final.ipynb # Final notebook version
-├── README.md # Project documentation
-├── outputs/ # Annotated images & CSVs
-├── leftImg8bit_trainvaltest/ # Cityscapes images (ignored by git)
-├── gtFine_trainvaltest/ # Cityscapes annotations (ignored by git)
-├── yolov8*.pt # YOLOv8 weights
-└── .gitignore
-
-yaml
-Copy code
-
----
-
 ## Installation
 
 Recommended: Python 3.9+ with PyTorch and CUDA (optional)
@@ -53,41 +36,27 @@ Note: The dataset is large (~10s of GBs), so these folders are ignored in Git vi
 
 Usage
 Set the image path in cityscapes_yolo_midas_fusion.py:
-
-python
-Copy code
 IMG_PATH = "./leftImg8bit_trainvaltest/val/frankfurt/frankfurt_000000_003025_leftImg8bit.png"
 GT_DEPTH_PATH = "./gt_depth/frankfurt_000000_003025_depth.png"  # optional
-Run the pipeline:
-
-bash
-Copy code
-python cityscapes_yolo_midas_fusion.py
+Run the pipeline: python cityscapes_yolo_midas_fusion.py
 Outputs:
-
 Annotated image: outputs/annotated.png
-
 CSV with detections & depth: outputs/detections_with_distance.csv
-
 Optional plots and summary statistics in the terminal or displayed via matplotlib
 
 Example Output
 Class	Confidence	Rel. Depth	Est. Distance (m)	Direction
-car	0.95	0.32	35.1	Center
-person	0.87	0.45	29.4	Left
+car   	0.95	     0.32	       35.1	             Center
+person	0.87	     0.45	       29.4	             Left
 
 Annotated images will have bounding boxes, distance labels, and direction overlayed.
 
 Optional Configuration
 YOLO weights: yolov8n.pt, yolov8m.pt, or yolov8l.pt
-
 Depth model: "depth-anything/Depth-Anything-V2-small-hf" (default, can change to larger model for higher quality)
-
 Output directory: OUT_DIR in the script
 
 License & References
 YOLOv8: https://github.com/ultralytics/ultralytics
-
 Depth-Anything: https://huggingface.co/depth-anything/Depth-Anything-V2-small-hf
-
 Cityscapes dataset: https://www.cityscapes-dataset.com/
