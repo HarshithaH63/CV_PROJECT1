@@ -41,24 +41,28 @@ IMG_PATH = "./leftImg8bit_trainvaltest/val/frankfurt/frankfurt_000000_003025_lef
 GT_DEPTH_PATH = "./gt_depth/frankfurt_000000_003025_depth.png"  # optional
 ```
 2. Run the pipeline:
+```
 python cityscapes_yolo_midas_fusion.py
+```
 
 ## Outputs:
-Annotated image: outputs/annotated.png
-CSV with detections & depth: outputs/detections_with_distance.csv
-Optional plots and summary statistics in the terminal or displayed via matplotlib
+- Annotated image: outputs/annotated.png
+- CSV with detections & depth: outputs/detections_with_distance.csv
+- Optional plots and summary statistics in the terminal or displayed via matplotlib
 
 ## Example Output
-Class	Confidence	Rel. Depth	Est. Distance (m)	Direction
-car   	0.95	     0.32	       35.1	             Center
-person	0.87	     0.45	       29.4	             Left
+
+| Class  | Confidence | Rel. Depth | Est. Distance (m) | Direction |
+|--------|------------|------------|-----------------|-----------|
+| car    | 0.95       | 0.32       | 35.1            | Center    |
+| person | 0.87       | 0.45       | 29.4            | Left      |
 
 Annotated images will have bounding boxes, distance labels, and direction overlayed.
 
-Optional Configuration
-YOLO weights: yolov8n.pt, yolov8m.pt, or yolov8l.pt
-Depth model: "depth-anything/Depth-Anything-V2-small-hf" (default, can change to larger model for higher quality)
-Output directory: OUT_DIR in the script
+## Optional Configuration
+- YOLO weights: yolov8n.pt, yolov8m.pt, or yolov8l.pt
+- Depth model: "depth-anything/Depth-Anything-V2-small-hf" (default, can change to larger model for higher quality)
+- Output directory: OUT_DIR in the script
 
 ## License & References
 
