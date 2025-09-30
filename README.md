@@ -29,10 +29,10 @@ pip install ultralytics opencv-python matplotlib pandas transformers timm
 ```
 
 ## Dataset
-This project uses the [Cityscapes Dataset](https://www.cityscapes-dataset.com/)
-RGB images: leftImg8bit_trainvaltest/
-Optional ground truth depth: gtFine_trainvaltest/ or custom depth maps
-Note: The dataset is large (~10s of GBs), so these folders are ignored in Git via .gitignore..
+- This project uses the [Cityscapes Dataset](https://www.cityscapes-dataset.com/)
+- RGB images: leftImg8bit_trainvaltest/
+- Optional ground truth depth: gtFine_trainvaltest/ or custom depth maps
+- Note: The dataset is large (~10s of GBs), so these folders are ignored in Git via .gitignore..
 
 ## Usage
 1. Set the image path in cityscapes_yolo_midas_fusion.py:
